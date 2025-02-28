@@ -1,11 +1,13 @@
 
 import './App.css'
 // import Plus from './components/Plus'
-import React from 'react'
+import React, { useState } from 'react'
 import Screen from './components/Screen'
 import Buttons from './components/Buttons'
 function App() {
 
+
+  const [input, setInput] = useState('')
   return (
     <>
    <form>
@@ -49,9 +51,9 @@ function App() {
               <input type="checkbox" id="equals" />
               <main>
                
-               <Screen />
+               <Screen input={input} />
 
-                <Buttons />
+                <Buttons setInput={setInput} />
               </main>
             </div>
           </div>

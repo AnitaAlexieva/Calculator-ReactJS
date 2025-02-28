@@ -1,7 +1,7 @@
-export default function AddButton(){
+export default function AddButton( {handleClickButton}){
     return(
         <button type="button">
-            <label htmlFor="add"></label>+
+            <label htmlFor="add" onClick={() => handleClickButton('+')}></label>+
         </button>
     )
 }

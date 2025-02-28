@@ -1,7 +1,7 @@
-export default function SubstractButton(){
+export default function SubstractButton( {handleClickButton}){
     return(
         <button type="button">
-            <label htmlFor="subtract"></label>-
+            <label htmlFor="subtract" onClick={() => handleClickButton('-')}></label>-
         </button>
     )
 }

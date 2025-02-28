@@ -1,7 +1,7 @@
-export default function MultiplyButton(){
+export default function MultiplyButton({handleClickButton}){
     return (
         <button type="button">
-            <label htmlFor="multiply"></label>×
+            <label htmlFor="multiply" onClick={() => handleClickButton('x')}></label>×
         </button>
     )
 }

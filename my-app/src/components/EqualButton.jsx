@@ -1,7 +1,7 @@
-export default function EqualButton(){
+export default function EqualButton({handleClickButton}){
     return(
         <button type="button">
-                <label htmlFor="equals"></label>=
+                <label htmlFor="equals" onClick={() => handleClickButton('=')}></label>=
         </button>
     )
 }
