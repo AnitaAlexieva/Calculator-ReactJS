@@ -7,9 +7,9 @@ import SubstractButton from "./SubstractButton";
 
 export default function Buttons({setInput}){
 
-  const handleClickButton = ([value]) =>{
-    setInput((curInput) => curInput + [value])
-  }
+  const handleClickButton = (value) => {
+    setInput((curInput) => (curInput === "Error" ? value : curInput + value));
+  };
 
   const resetClickHandler = () =>{
     setInput('')
