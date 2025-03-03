@@ -16,7 +16,11 @@ export default function Buttons({setInput}){
   }
 
   const resultClickHandler = () => {
+    
     setInput((curInput) => {
+      if (!curInput.trim()) {
+        return "Error";
+      }
     
       if (/[\+\-\*\/]{2,}/.test(curInput) || /[^0-9\+\-\*\/.]/.test(curInput)) {
         return "Error"; 
