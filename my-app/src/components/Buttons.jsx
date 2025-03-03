@@ -6,6 +6,8 @@ import ResetButton from "./ResetButton";
 import SubstractButton from "./SubstractButton";
 
 export default function Buttons({setInput}){
+  
+  const [showResult, setResult] = ['']
 
   const handleClickButton = (value) =>{
     setInput((curInput) => curInput + value)
@@ -14,6 +16,16 @@ export default function Buttons({setInput}){
   const resetClickHandler = () =>{
     setInput('')
   }
+
+  const resultClickHandler = () => {
+    setInput((curInput) => {
+      try {
+        return eval(curInput); // Изчислява израза
+      } catch {
+        return "Error"; // Ако има грешка, показва "Error"
+      }
+    });
+  };
     return(
         <div id="buttons">
                   <button type="button">
@@ -68,7 +80,7 @@ export default function Buttons({setInput}){
                     0
                   </button>
 
-                    <EqualButton handleClickButton={handleClickButton} />
+                    <EqualButton onResult = {resultClickHandler} />
 
                     <AddButton handleClickButton={handleClickButton} />
 
