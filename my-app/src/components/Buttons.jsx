@@ -10,6 +10,10 @@ export default function Buttons({setInput}){
   const handleClickButton = (value) =>{
     setInput((curInput) => curInput + value)
   }
+
+  const resetClickHandler = () =>{
+    setInput('')
+  }
     return(
         <div id="buttons">
                   <button type="button">
@@ -57,7 +61,7 @@ export default function Buttons({setInput}){
 
                     <SubstractButton handleClickButton ={handleClickButton}/>
 
-                    <ResetButton />
+                    <ResetButton onReset={resetClickHandler}/>
 
                   <button type="button">
                     <label htmlFor="d1-0" className="digit1" onClick ={() => handleClickButton('0')}></label>
