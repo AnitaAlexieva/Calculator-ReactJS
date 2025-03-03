@@ -17,10 +17,15 @@ export default function Buttons({setInput}){
 
   const resultClickHandler = () => {
     setInput((curInput) => {
+    
+      if (/[\+\-\*\/]{2,}/.test(curInput) || /[^0-9\+\-\*\/.]/.test(curInput)) {
+        return "Error"; 
+      }
+      
       try {
-        return eval(curInput); // Изчислява израза
+        return eval(curInput); 
       } catch {
-        return "Error"; // Ако има грешка, показва "Error"
+        return "Error"; 
       }
     });
   };
